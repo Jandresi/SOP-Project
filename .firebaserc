@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sop-project-c012c": {
+      "hosting": {
+        "SOP-Project": [
+          "sop-project-c012c"
+        ]
+      }
+    }
+  }
+}

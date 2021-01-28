@@ -1,0 +1,168 @@
+<div class="fondo">
+    <h1 class="titulo text-center">EDITAR LLAMADA</h1>
+
+    <form class="mt-3" (ngSubmit)="onGuardar()" [formGroup]="formularioLlamada">
+        <div class="formulario">
+
+            <!-- Ingreso de fecha -->
+            <div class="item" id="fecha">
+                <label>Fecha</label>
+                <br>
+                <input type="text" placeholder="Fecha" class="form-control text-center" formControlName="fecha">
+            </div>
+
+            <!-- Ingreso Contrato -->
+            <div class="item" id="contrato">
+                <label>Contrato</label>
+                <br>
+                <input type="text" placeholder="Contrato" class="form-control text-center" formControlName="contrato">
+            </div>
+
+            <!-- Ingreso Barrio -->
+            <div class="item" id="barrio">
+                <label>Barrio</label>
+                <br>
+                <select class="form-control text-center" formControlName="barrio">
+                    <option hidden selected>Barrio</option>
+                    <option>12 De Abril</option>
+                    <option>14 De Julio</option>
+                    <option>6 De Enero</option>
+                    <option>20 De Junio</option>
+                    <option>Alfonso Lopez Michelsen</option>
+                    <option>Alfonso Lopez Pumarejo</option>
+                    <option>Americas</option>
+                    <option>Antonio Nariño</option>
+                    <option>Bahia</option>
+                    <option>Bellavista</option>
+                    <option>Bolivar</option>
+                    <option>Bosque</option>
+                    <option>Brisas del Mar</option>
+                    <option>Brisas del Pacifico</option>
+                    <option>Cabal Pombo</option>
+                    <option>Caldas</option>
+                    <option>Camilo Torres</option>
+                    <option>Campin</option>
+                    <option>Cascajal</option>
+                    <option>Centenario</option>
+                    <option>Centro</option>
+                    <option>Ciudadela Colpuertos</option>
+                    <option>Ciudadela Nueva Buenaventura</option>
+                    <option>Colon</option>
+                    <option>Comfamar</option>
+                    <option>Cordoba</option>
+                    <option>Cristal</option>
+                    <option>Dona Ceci</option>
+                    <option>El Cambio</option>
+                    <option>El Carmen</option>
+                    <option>El Dorado</option>
+                    <option>El Progreso</option>
+                    <option>El Ruiz</option>
+                    <option>El Triunfo</option>
+                    <option>Eucaristico</option>
+                    <option>Firme</option>
+                    <option>Fortaleza</option>
+                    <option>Gaitan</option>
+                    <option>Galeon</option>
+                    <option>Gran Colombiana</option>
+                    <option>Independencia</option>
+                    <option>Inmaculada</option>
+                    <option>Jardin</option>
+                    <option>Jorge</option>
+                    <option>Juan 23</option>
+                    <option>Kennedy</option>
+                    <option>La Campiña</option>
+                    <option>La comuna</option>
+                    <option>La Dignidad</option>
+                    <option>La Libertad</option>
+                    <option>La Piña</option>
+                    <option>Las Palmas</option>
+                    <option>Lleras</option>
+                    <option>Los Alamos</option>
+                    <option>Los Pinos</option>
+                    <option>Manglares</option>
+                    <option>Maria Eugenia</option>
+                    <option>Matias mulumba</option>
+                    <option>Miraflores</option>
+                    <option>Miramar</option>
+                    <option>Modelo</option>
+                    <option>Muroyusti</option>
+                    <option>Naval</option>
+                    <option>Nayita</option>
+                    <option>Nueva Colombia</option>
+                    <option>Nueva Floresta</option>
+                    <option>Nueva Frontera</option>
+                    <option>Nueva Granada</option>
+                    <option>Nuevo Amanecer</option>
+                    <option>Nuevo Horizonte</option>
+                    <option>Obrero</option>
+                    <option>Olimpico</option>
+                    <option>Oriente</option>
+                    <option>PaloSeco</option>
+                    <option>Pampalinda</option>
+                    <option>Panamericano</option>
+                    <option>Playita</option>
+                    <option>Porvenir</option>
+                    <option>Pueblo Nuevo</option>
+                    <option>Puertas Del Mar</option>
+                    <option>Punta del este</option>
+                    <option>Rockefeller</option>
+                    <option>San Buenaventura</option>
+                    <option>San Francisco</option>
+                    <option>San Fransisco</option>
+                    <option>San Luis</option>
+                    <option>Santa cruz</option>
+                    <option>Santa Fe</option>
+                    <option>Santa Rosa</option>
+                    <option>Transformacion</option>
+                    <option>Turbay Ayala</option>
+                    <option>Union de Vivienda</option>
+                    <option>Urb. San Antonio 1</option>
+                    <option>Urb. San Antonio 2</option>
+                    <option>Urbanizacion Los Angeles</option>
+                    <option>Uribe Uribe</option>
+                    <option>Viento Libre</option>
+                    <option>Vista Hermosa</option>
+                </select>
+            </div>
+
+            <!-- Ingreso de motivo -->
+            <div class="item" id="motivo">
+                <label>Motivo</label>
+                <br>
+                <select class="form-control text-center" formControlName="motivo">
+                    <option value="" hidden>Motivo</option>
+                    <option>Información</option>
+                    <option>Disponibilidad</option>
+                    <option>Calidad</option>
+                    <option>Facturación</option>
+                </select>
+            </div>
+
+            <!-- Ingreso Descripción -->
+            <div class="item" id="descripcion">
+                <label>Descripción</label>
+                <br>
+                <input type="text" placeholder="Descripción" class="form-control text-center" formControlName="descripcion">
+            </div>
+
+            <!-- Ingreso Solución -->
+            <div class="item" id="solucion">
+                <label>Solución</label>
+                <br>
+                <input type="text" placeholder="Solución" class="form-control text-center" formControlName="solucion">
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Boton de Guardar Cambios -->
+        <div class="botonera">
+            <button type="submit" class="btn btn-warning" id="ingresar">GUARDAR CAMBIOS</button>
+        </div>
+    </form>
+
+    <!-- Botón de Volver -->
+    <div class="botonera">
+        <button type="submit" class="btn btn-secondary mt" id="regresar" (click)="onGoBack()">REGRESAR</button>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+.fondo {
+    background-color: #f5f4f4;
+    min-height: 40rem;
+}
+
+.titulo {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 28pt;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.formulario {
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Libre Baskerville', serif;
+}
+
+input {
+    width: 220px;
+    height: 50px;
+}
+
+.botonera {
+    margin: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-family: 'Libre Baskerville', serif;
+}
+
+#ingresar,
+#regresar {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 60%;
+    height: 40px;
+    border: black solid 2px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+#ingresar:hover {
+    background-color: yellow;
+}
+
+#regresar:hover {
+    background-color: darkgray;
+}

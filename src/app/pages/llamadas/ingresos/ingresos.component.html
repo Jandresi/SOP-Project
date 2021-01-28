@@ -1,0 +1,208 @@
+<div class="fondo">
+    <h1 class="titulo text-center">REGISTRO DE LLAMADAS</h1>
+
+    <form class="mt-3" (ngSubmit)="onGuardar()" [formGroup]="formularioLlamada">
+        <div class="formulario">
+
+            <!-- Ingreso de fecha -->
+            <div class="item" id="fecha">
+                <label>Fecha</label>
+                <br>
+                <input type="date" min="2021-01-01" class="form-control text-center" formControlName="fecha" [class]="isValidField('fecha')">
+            </div>
+
+            <!-- Ingreso Contrato -->
+            <div class="item" id="contrato">
+                <label>Contrato</label>
+                <br>
+                <input type="text" placeholder="Contrato" class="form-control text-center" formControlName="contrato" [class]="isValidField('contrato')">
+            </div>
+
+            <!-- Lista de Barrios -->
+            <div class="item" id="barrio">
+                <label>Barrio</label>
+                <br>
+                <select placeholder="Barrio" list="listaBarrios" class="form-control text-center" formControlName="barrio" [class]="isValidField('barrio')">
+                    <option value="" hidden>Barrio</option>
+                    <option>12 De Abril</option>
+                    <option>14 De Julio</option>
+                    <option>6 De Enero</option>
+                    <option>20 De Junio</option>
+                    <option>Alfonso Lopez Michelsen</option>
+                    <option>Alfonso Lopez Pumarejo</option>
+                    <option>Americas</option>
+                    <option>Antonio Nariño</option>
+                    <option>Bahia</option>
+                    <option>Bellavista</option>
+                    <option>Bolivar</option>
+                    <option>Bosque</option>
+                    <option>Brisas del Mar</option>
+                    <option>Brisas del Pacifico</option>
+                    <option>Cabal Pombo</option>
+                    <option>Caldas</option>
+                    <option>Camilo Torres</option>
+                    <option>Campin</option>
+                    <option>Cascajal</option>
+                    <option>Centenario</option>
+                    <option>Centro</option>
+                    <option>Ciudadela Colpuertos</option>
+                    <option>Ciudadela Nueva Buenaventura</option>
+                    <option>Colon</option>
+                    <option>Comfamar</option>
+                    <option>Cordoba</option>
+                    <option>Cristal</option>
+                    <option>Dona Ceci</option>
+                    <option>El Cambio</option>
+                    <option>El Carmen</option>
+                    <option>El Dorado</option>
+                    <option>El Progreso</option>
+                    <option>El Ruiz</option>
+                    <option>El Triunfo</option>
+                    <option>Eucaristico</option>
+                    <option>Firme</option>
+                    <option>Fortaleza</option>
+                    <option>Gaitan</option>
+                    <option>Galeon</option>
+                    <option>Gran Colombiana</option>
+                    <option>Independencia</option>
+                    <option>Inmaculada</option>
+                    <option>Jardin</option>
+                    <option>Jorge</option>
+                    <option>Juan 23</option>
+                    <option>Kennedy</option>
+                    <option>La Campiña</option>
+                    <option>La comuna</option>
+                    <option>La Dignidad</option>
+                    <option>La Libertad</option>
+                    <option>La Piña</option>
+                    <option>Las Palmas</option>
+                    <option>Lleras</option>
+                    <option>Los Alamos</option>
+                    <option>Los Pinos</option>
+                    <option>Manglares</option>
+                    <option>Maria Eugenia</option>
+                    <option>Matias mulumba</option>
+                    <option>Miraflores</option>
+                    <option>Miramar</option>
+                    <option>Modelo</option>
+                    <option>Muroyusti</option>
+                    <option>Naval</option>
+                    <option>Nayita</option>
+                    <option>Nueva Colombia</option>
+                    <option>Nueva Floresta</option>
+                    <option>Nueva Frontera</option>
+                    <option>Nueva Granada</option>
+                    <option>Nuevo Amanecer</option>
+                    <option>Nuevo Horizonte</option>
+                    <option>Obrero</option>
+                    <option>Olimpico</option>
+                    <option>Oriente</option>
+                    <option>PaloSeco</option>
+                    <option>Pampalinda</option>
+                    <option>Panamericano</option>
+                    <option>Playita</option>
+                    <option>Porvenir</option>
+                    <option>Pueblo Nuevo</option>
+                    <option>Puertas Del Mar</option>
+                    <option>Punta del este</option>
+                    <option>Rockefeller</option>
+                    <option>San Buenaventura</option>
+                    <option>San Francisco</option>
+                    <option>San Fransisco</option>
+                    <option>San Luis</option>
+                    <option>Santa cruz</option>
+                    <option>Santa Fe</option>
+                    <option>Santa Rosa</option>
+                    <option>Transformacion</option>
+                    <option>Turbay Ayala</option>
+                    <option>Union de Vivienda</option>
+                    <option>Urb. San Antonio 1</option>
+                    <option>Urb. San Antonio 2</option>
+                    <option>Urbanizacion Los Angeles</option>
+                    <option>Uribe Uribe</option>
+                    <option>Viento Libre</option>
+                    <option>Vista Hermosa</option>
+                </select>
+            </div>
+
+            <!-- Ingreso de motivo -->
+            <div class="item" id="motivo">
+                <label>Motivo</label>
+                <br>
+                <select class="form-control text-center" formControlName="motivo" [class]="isValidField('motivo')">
+                    <option value="" hidden>Motivo</option>
+                    <option>Información</option>
+                    <option>Disponibilidad</option>
+                    <option>Calidad</option>
+                    <option>Facturación</option>
+                </select>
+            </div>
+
+            <!-- Ingreso Descripción -->
+            <div class="item" id="descripcion">
+                <label>Descripción</label>
+                <br>
+                <input type="text" placeholder="Descripción" class="form-control text-center" formControlName="descripcion" [class]="isValidField('descripcion')">
+            </div>
+
+            <!-- Ingreso Solución -->
+            <div class="item" id="solucion">
+                <label>Solución</label>
+                <br>
+                <select name="Solucion" class="form-control text-center" formControlName="solucion" [class]="isValidField('solucion')">
+                    <option value="" hidden>Solución</option>
+                    <option>Se da información</option>
+                    <option>Se cambian datos del WI-Fi</option>
+                    <option>Solicitud mantenimiento técnico</option>
+                    <option>Solicitud mantenimiento codinet</option>
+                    <option>Se toma O de S para instaladores</option>
+                    <option>Se soluciona reiniciando</option>
+                    <option>Procedimiento general</option>
+                    <option>Se remite con alguien más y se da solución</option>
+                    <option>Se remite con alguien más y no se da solución</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <!-- Botones Ingresar y Cancelar -->
+        <div class="botonera">
+            <button type="button" class="btn btn-danger" id="cancelar" (click)="onLimpiar()">LIMPIAR CAMPOS</button>
+            <button type="submit" class="btn btn-success" id="ingresar">REGISTRAR LLAMADA</button>
+        </div>
+    </form>
+
+    <h2 class="text-center titulo2">LLAMADAS DE HOY</h2>
+
+    <!-- Tabla que muestra los elementos de la BD -->
+    <div class="table-responsive text-center">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <!-- Títulos de la tabla -->
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Contrato</th>
+                    <th scope="col">Barrio</th>
+                    <th scope="col">Motivo</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Solución</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Llenará la tabla con un ngFor en su casilla correspondiente -->
+                <tr *ngFor="let item of llamadas$ | async">
+                    <td>{{item.fecha}}</td>
+                    <td>{{item.contrato}}</td>
+                    <td>{{item.barrio}}</td>
+                    <td>{{item.motivo}}</td>
+                    <td>{{item.descripcion}}</td>
+                    <td>{{item.solucion}}</td>
+                    <td class="btn-group" role="group">
+                        <button type="button" class="btn btn-warning mr-3" (click)="onGoToEditar(item)">Editar</button>
+                        <button type="button" class="btn btn-danger" (click)="onGoToEliminar(item.id)">Borrar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
