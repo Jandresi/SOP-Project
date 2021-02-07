@@ -34,6 +34,8 @@ export class IngresosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /* Tomará los datos del objeto seleccionado y los llevará a otra
+    interfaz para ser modificados */
   onGoToEditar(item: any): void{
     this.navigationExtras.state.value = item;
     this.router.navigate(['editar'], this.navigationExtras);
@@ -59,10 +61,12 @@ export class IngresosComponent implements OnInit {
     }
   }
 
+  /* Función para vaciar los campos */
   onLimpiar(): void{
     this.formularioLlamada.reset();
   }
 
+  /* Validador que define cuándo una casilla está vacía y cuándo no */
   isValidField(field: string): string {
     const validatedField = this.formularioLlamada.get(field);
     return( !validatedField.valid && validatedField.touched)
