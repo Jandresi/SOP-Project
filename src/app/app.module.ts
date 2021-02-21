@@ -7,12 +7,11 @@ import { HeaderComponent } from './components/header/header.component';
 import { HeaderModule } from './components/header/header.module';
 import { AutenticacionService } from './auth/service/autenticacion.service';
 
-/* Angular y conexión */
+// Angular y conexión
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
-import { CanEditGuard } from './auth/guards/can-edit.guard';
 
 
 @NgModule({
@@ -29,8 +28,7 @@ import { CanEditGuard } from './auth/guards/can-edit.guard';
   ],
   providers: [
     AngularFirestore,
-    AutenticacionService,
-    CanEditGuard
+    AutenticacionService
   ],
   bootstrap: [AppComponent]
 })
