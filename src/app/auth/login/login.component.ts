@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers: [AutenticacionService]
 })
 export class LoginComponent implements OnInit {
 
@@ -21,6 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // tslint:disable-next-line: typedef
   async onLogin() {
     const {email, password} = this.loginForm.value;
     try{

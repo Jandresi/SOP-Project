@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HeaderModule } from './components/header/header.module';
+import { AutenticacionService } from './auth/service/autenticacion.service';
 
 /* Angular y conexión */
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { CanEditGuard } from './auth/guards/can-edit.guard';
 
 
 @NgModule({
@@ -25,7 +27,11 @@ import { environment } from '../environments/environment';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule
   ],
-  providers: [AngularFirestore],
+  providers: [
+    AngularFirestore,
+    AutenticacionService,
+    CanEditGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

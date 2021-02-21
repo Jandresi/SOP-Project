@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestoreCollection, AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Llamada } from '../Models/llamadas.interface';
+import { Llamada } from '../../Models/llamadas.interface';
 import { map } from 'rxjs/operators';
 
 @Injectable({

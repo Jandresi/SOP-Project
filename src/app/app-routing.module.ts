@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { CanEditGuard } from './auth/guards/can-edit.guard';
 
 // tslint:disable-next-line: max-line-length
 const routes: Routes = [

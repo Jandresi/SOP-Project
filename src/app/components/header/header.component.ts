@@ -6,8 +6,7 @@ import { Observable } from 'rxjs';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'],
-  providers: [AutenticacionService]
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
@@ -21,7 +20,7 @@ export class HeaderComponent implements OnInit {
   async onLogout(): Promise<void> {
     try{
       await this.authSvc.logout();
-      this.router.navigate(['login'])
+      this.router.navigate(['login']);
     } catch (error) {
       console.log(error);
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Llamada } from '../../Models/llamadas.interface';
+import { Llamada } from '../../../Models/llamadas.interface';
 import { IngresosService } from '../ingresos.service';
 
 @Component({
