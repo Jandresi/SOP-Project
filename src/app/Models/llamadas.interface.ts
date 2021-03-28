@@ -1,5 +1,6 @@
 export interface Llamada {
     id?: string;
+    atiende?: string;
     fecha?: any;
     contrato?: string;
     barrio?: string;
@@ -7,3 +8,4 @@ export interface Llamada {
     descripcion?: string;
     solucion?: string;
 }
+

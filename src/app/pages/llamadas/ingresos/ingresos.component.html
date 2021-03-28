@@ -171,16 +171,17 @@
         </div>
     </form>
 
-    <h2 class="text-center titulo2">LLAMADAS DE HOY</h2>
+    <h2 class="text-center titulo2">LLAMADAS REGISTRADAS</h2>
 
     <!-- Tabla que muestra los elementos de la BD,
         la iba a colocar "table-responsive" pero se ve mejor sin él -->
     <div class="text-center">
-        <table class="table table-striped table-sm table-hover">
+        <table datatable dtOptions="dtOptions" dtTrigger="dtTrigger" class="table table-striped table-sm table-hover row-border hover">
             <thead class="thead-dark">
                 <tr>
                     <!-- Títulos de la tabla -->
                     <th scope="col">Fecha</th>
+                    <th scope="col">Atendió</th>
                     <th scope="col">Contrato</th>
                     <th scope="col">Barrio</th>
                     <th scope="col">Motivo</th>
@@ -193,6 +194,7 @@
                 <!-- Llenará la tabla con un ngFor en su casilla correspondiente -->
                 <tr *ngFor="let item of llamadas$ | async">
                     <td>{{item.fecha}}</td>
+                    <td>{{item.atiende}}</td>
                     <td>{{item.contrato}}</td>
                     <td>{{item.barrio}}</td>
                     <td>{{item.motivo}}</td>
@@ -200,7 +202,6 @@
                     <td>{{item.solucion}}</td>
                     <td class="btn-group" role="group">
                         <button type="button" class="btn btn-warning mr-3" (click)="onGoToEditar(item)">Editar</button>
-                        <button type="button" class="btn btn-danger" (click)="onGoToEliminar(item.id)">Borrar</button>
                     </td>
                 </tr>
             </tbody>

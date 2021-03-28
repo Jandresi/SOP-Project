@@ -42,9 +42,20 @@ export class IngresosService {
      });
    }
 
-   private getLlamadas(): void{
+   /* private getLlamadas(): void{
      this.llamadas = this.llamadasCollection.snapshotChanges().pipe(
        map(actions => actions.map(a => a.payload.doc.data() as Llamada))
      );
-   }
+   } */
+
+   getLlamadas(): Observable<Llamada[]>{
+    return this.llamadasCollection.snapshotChanges().pipe(
+    map(actions => actions.map(
+      a => {
+        const data = a.payload.doc.data() as Llamada;
+        const id = a.payload.doc.id;
+        return {id, ...data};
+      }
+    )));
+ }
 }
