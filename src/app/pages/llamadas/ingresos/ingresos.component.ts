@@ -12,7 +12,7 @@ import { IngresosService } from '../ingresos.service';
 export class IngresosComponent implements OnInit {
 
   /* Me da acceso al observable */
-  llamadas$ = this.ingresosSvc.llamadas;
+  llamadas$ = this.ingresosSvc.getLlamadas();
 
   navigationExtras: NavigationExtras = {
     state: {

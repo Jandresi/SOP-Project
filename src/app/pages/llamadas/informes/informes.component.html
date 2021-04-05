@@ -1,6 +1,122 @@
-<h1 class="text-center">Informe</h1>
-<br>
-<div class="container">
-    <h1>Llamadas por persona</h1>
-    <canvas id="porPersona" width="200" height="80"></canvas>
+<div class="contenedor-general">
+    <h1 class="titulo text-center">REPORTE GENERAL</h1>
+    <br>
+    <div class="horizontal">
+        <div class="recuadro bg-success text-white">
+            <strong>Llamadas Atendidas</strong>
+            <br>
+            <strong class="valor">{{contadorGeneral}}</strong>
+        </div>
+
+        <div class="recuadro bloque bg-warning text-white">
+            <strong>Promedio Diario</strong>
+            <br>
+            <strong class="valor">{{promedioDiario}}</strong>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="horizontal">
+        <div class="card grafico-pequeno">
+            <div class="card-header">
+                <h1 class="titulo2">LLAMADAS ATENDIDAS POR PERSONA</h1>
+            </div>
+            <div class="card-body">
+                <canvas id="porPersona"></canvas>
+                <!-- Aquí va el gráfico de llamadas por persona -->
+            </div>
+        </div>
+
+        <div class="card grafico-pequeno">
+            <div class="card-header">
+                <h1 class="titulo2">MOTIVOS DE LLAMADA</h1>
+            </div>
+            <div class="card-body">
+                <canvas id="porMotivo"></canvas>
+                <!-- Aquí va el gráfico de motivos -->
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="horizontal">
+        <div class="card grafico-largo">
+            <div class="card-header">
+                <h1 class="titulo2">LLAMADAS ATENDIDAS POR DÍA</h1>
+            </div>
+            <div class="card-body">
+                <canvas id="porDia"></canvas>
+                <!-- Aquí va el gráfico de líneas de llamadas por día -->
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="horizontal">
+        <div class="card grafico-largo">
+            <div class="card-header">
+                <h1 class="titulo2">SOLUCIONES MÁS DADAS POR LOS CONTESTADORES</h1>
+            </div>
+            <div class="card-body">
+                <canvas id="porSolucion"></canvas>
+                <!-- Aquí va el gráfico -->
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="horizontal">
+        <div class="card grafico-largo">
+            <div class="card-header">
+                <h1 class="titulo2">LLAMADAS POR INFORMACIÓN</h1>
+            </div>
+            <div class="card-body">
+                Aquí va el gráfico
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="horizontal">
+        <div class="card grafico-largo">
+            <div class="card-header">
+                <h1 class="titulo2">LLAMADAS POR DISPONIBILIDAD</h1>
+            </div>
+            <div class="card-body">
+                Aquí va el gráfico
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="horizontal">
+        <div class="card grafico-largo">
+            <div class="card-header">
+                <h1 class="titulo2">LLAMADAS POR CALIDAD</h1>
+            </div>
+            <div class="card-body">
+                Aquí va el gráfico
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="horizontal">
+        <div class="card grafico-largo">
+            <div class="card-header">
+                <h1 class="titulo2">LLAMADAS POR FACTURACIÓN</h1>
+            </div>
+            <div class="card-body">
+                Aquí va el gráfico
+            </div>
+        </div>
+    </div>
+
 </div>

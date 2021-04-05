@@ -3,10 +3,10 @@
         <a class="logo">SOP</a>
         <nav>
             <ul class="nav_links" *ngIf="user$ | async as user">
-                <li *ngIf="user"><a routerLink='/ingresos'><i class="fas fa-phone-alt"></i>  Registrar Llamadas</a></li>
-                <li *ngIf="user"><a routerLink='/informes'><i class="fas fa-chart-line"></i>  Ver Informes</a></li>
-                <li *ngIf="user"><a routerLink='/historial'><i class="fas fa-search"></i>  Historial</a></li>
-                <li *ngIf="user"><a href="#" (click)="onLogout()"><i class="far fa-times-circle"></i>  Salir</a></li>
+                <li *ngIf="user$"><a routerLink='/ingresos'><i class="fas fa-phone-alt"></i>  Registrar Llamadas</a></li>
+                <li *ngIf="user$"><a routerLink='/informes'><i class="fas fa-chart-line"></i>  Reportes</a></li>
+                <li *ngIf="user$"><a routerLink='/historial'><i class="fas fa-search"></i>  Historial</a></li>
+                <li *ngIf="user$"><a href="#" (click)="onLogout()"><i class="far fa-times-circle"></i>  Salir</a></li>
             </ul>
         </nav>
     </header>

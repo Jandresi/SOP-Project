@@ -187,7 +187,7 @@
                     <th scope="col">Motivo</th>
                     <th scope="col">Descripción</th>
                     <th scope="col">Solución</th>
-                    <th scope="col">Acciones</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -200,9 +200,7 @@
                     <td>{{item.motivo}}</td>
                     <td>{{item.descripcion}}</td>
                     <td>{{item.solucion}}</td>
-                    <td class="btn-group" role="group">
-                        <button type="button" class="btn btn-warning mr-3" (click)="onGoToEditar(item)">Editar</button>
-                    </td>
+                    <i class="fas fa-edit" (click)="onGoToEditar(item)"></i>
                 </tr>
             </tbody>
         </table>
