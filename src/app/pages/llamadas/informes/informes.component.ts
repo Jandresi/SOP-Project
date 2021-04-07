@@ -64,15 +64,15 @@ export class InformesComponent implements OnInit {
   ngOnInit(): void {
     this.data$ = this.ingresosSvc.getLlamadas();
 
-    // Trae el total y el promedio de llamadas recibidas en el mes //
+// Trae el total y el promedio de llamadas recibidas en el mes //
 
     // tslint:disable-next-line: deprecation
     this.data$.subscribe((res: Llamada[]) => {
-      this.contadorGeneral = res.length;
-      this.promedioDiario = Math.floor(res.length / 8);
+      this.contadorGeneral = (res.length - 1);
+      this.promedioDiario = Math.floor(res.length / 5);
     });
 
-    // Cuenta las llamadas recibidas por cada contestador //
+// Cuenta las llamadas recibidas por cada contestador //
 
     // tslint:disable-next-line: deprecation
     this.data$.subscribe((res: Llamada[]) => {
@@ -381,6 +381,254 @@ export class InformesComponent implements OnInit {
         },
       });
     }); // Cierre del gráfico
+
+
+// Gráfico de llamadas de solamente INFORMACIÓN
+
+    // tslint:disable-next-line: deprecation
+    this.data$.subscribe((res: Llamada[]) => {
+      this.contador1 = 0;
+      this.contador2 = 0;
+      this.contador3 = 0;
+      this.contador4 = 0;
+      this.contador5 = 0;
+      this.contador6 = 0;
+      this.contador7 = 0;
+      this.contador8 = 0;
+      this.contador9 = 0;
+      this.contador10 = 0;
+
+      res.forEach(r => {
+        if (r.descripcion === 'Cambio de credenciales WIFI') {
+          this.contador1++;
+        }
+        else if (r.descripcion === 'Informaciones variadas') {
+          this.contador2++;
+        }
+        else if (r.descripcion === 'Mantenimiento pendiente') {
+          this.contador3++;
+        }
+        else if (r.descripcion === 'Proceso de afiliación') {
+          this.contador4++;
+        }
+        else if (r.descripcion === 'Instalación pendiente') {
+          this.contador5++;
+        }
+        else if (r.descripcion === 'Traslado pendiente') {
+          this.contador6++;
+        }
+        else if (r.descripcion === 'Proceso de desafiliación') {
+          this.contador7++;
+        }
+        else if (r.descripcion === 'Número del coordinador') {
+          this.contador8++;
+        }
+        else if (r.descripcion === 'Puntos de pago') {
+          this.contador9++;
+        }
+        else if (r.descripcion === 'Cobertura de WIFI') {
+          this.contador10++;
+        }
+      });
+
+      const graficoSolucion = new Chart('porInformacion', {
+        type: 'horizontalBar',
+        data: {
+          labels: ['Cambio de credenciales WIFI', 'Informaciones variadas', 'Mantenimiento pendiente',
+          'Proceso de afiliación', 'Instalación pendiente', 'Traslado pendiente', 'Proceso de desafiliación',
+          'Número del coordinador', 'Puntos de pago', 'Cobertura de WIFI'],
+          datasets: [{
+            label: 'Llamada de información',
+            data: [this.contador1, this.contador2, this.contador3, this.contador4, this.contador5,
+              this.contador6, this.contador7, this.contador8, this.contador9, this.contador10],
+            backgroundColor: [
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)'
+            ]
+          }],
+          scales: {
+            x: {
+              display: true,
+            },
+            y: {
+              display: true,
+              type: 'logarithmic',
+            }
+          }
+        }
+      });
+    });
+
+// Gráfico de llamadas de solamente DISPONIBILIDAD
+
+    // tslint:disable-next-line: deprecation
+    this.data$.subscribe((res: Llamada[]) => {
+      this.contador1 = 0;
+      this.contador2 = 0;
+      this.contador3 = 0;
+      this.contador4 = 0;
+      this.contador5 = 0;
+      this.contador6 = 0;
+      this.contador7 = 0;
+
+      res.forEach(r => {
+        if (r.descripcion === 'Todo ok pero no navega') {
+          this.contador1++;
+        }
+        else if (r.descripcion === 'CM encendido offline') {
+          this.contador2++;
+        }
+        else if (r.descripcion === 'Sin señal de TV') {
+          this.contador3++;
+        }
+        else if (r.descripcion === 'Sin ambos servicios') {
+          this.contador4++;
+        }
+        else if (r.descripcion === 'Módem formateado') {
+          this.contador5++;
+        }
+        else if (r.descripcion === 'Módem no enciende') {
+          this.contador6++;
+        }
+        else if (r.descripcion === 'Daño general') {
+          this.contador7++;
+        }
+      });
+
+      const graficoSolucion = new Chart('porDisponibilidad', {
+        type: 'horizontalBar',
+        data: {
+          labels: ['Todo ok pero no navega', 'CM encendido offline', 'Sin señal de TV',
+          'Sin ambos servicios', 'Módem formateado', 'Módem no enciende', 'Daño general'],
+          datasets: [{
+            label: 'Llamadas',
+            data: [this.contador1, this.contador2, this.contador3, this.contador4, this.contador5,
+              this.contador6, this.contador7],
+            backgroundColor: [
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)'
+            ]
+          }]
+        }
+      });
+    });
+
+// Gráfico de llamadas de solamente DISPONIBILIDAD
+
+    // tslint:disable-next-line: deprecation
+    this.data$.subscribe((res: Llamada[]) => {
+      this.contador1 = 0;
+      this.contador2 = 0;
+      this.contador3 = 0;
+      this.contador4 = 0;
+      this.contador5 = 0;
+      this.contador6 = 0;
+      this.contador7 = 0;
+
+      res.forEach(r => {
+        if (r.descripcion === 'Todo ok pero no navega') {
+          this.contador1++;
+        }
+        else if (r.descripcion === 'CM encendido offline') {
+          this.contador2++;
+        }
+        else if (r.descripcion === 'Sin señal de TV') {
+          this.contador3++;
+        }
+        else if (r.descripcion === 'Sin ambos servicios') {
+          this.contador4++;
+        }
+        else if (r.descripcion === 'Módem formateado') {
+          this.contador5++;
+        }
+        else if (r.descripcion === 'Módem no enciende') {
+          this.contador6++;
+        }
+        else if (r.descripcion === 'Daño general') {
+          this.contador7++;
+        }
+      });
+
+      const graficoSolucion = new Chart('porCalidad', {
+        type: 'horizontalBar',
+        data: {
+          labels: ['Caídas frecuentes', 'Lentitud', 'Señal lluviosa', 'TV lluviosa y caídas frecuentes'],
+          datasets: [{
+            label: 'Llamadas',
+            data: [this.contador1, this.contador2, this.contador3, this.contador4],
+            backgroundColor: [
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)',
+              'rgb(255, 179, 0)'
+            ]
+          }]
+        },
+      });
+    });
+
+    // Gráfico de llamadas de solamente DISPONIBILIDAD
+
+    // tslint:disable-next-line: deprecation
+    this.data$.subscribe((res: Llamada[]) => {
+      this.contador1 = 0;
+      this.contador2 = 0;
+      this.contador3 = 0;
+      this.contador4 = 0;
+      this.contador5 = 0;
+      this.contador6 = 0;
+      this.contador7 = 0;
+
+      res.forEach(r => {
+        if (r.descripcion === 'Consulta de saldo') {
+          this.contador1++;
+        }
+        else if (r.descripcion === 'Cortado en sistema') {
+          this.contador2++;
+        }
+        else if (r.descripcion === 'Reclamo por saldo') {
+          this.contador3++;
+        }
+        else if (r.descripcion === 'Fechas de corte / pago') {
+          this.contador4++;
+        }
+        else if (r.descripcion === 'Factura no llega') {
+          this.contador5++;
+        }
+      });
+
+      const graficoSolucion = new Chart('porFacturacion', {
+        type: 'horizontalBar',
+        data: {
+          labels: ['Consulta de saldo', 'Cortado en sistema', 'Reclamo por saldo',
+          'Fechas de corte / pago', 'Factura no llega'],
+          datasets: [{
+            label: 'Llamadas',
+            data: [this.contador1, this.contador2, this.contador3, this.contador4, this.contador5],
+            backgroundColor: [
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)',
+              'rgb(21, 101, 192)'
+            ]
+          }]
+        },
+      });
+    });
 
 
   } // Cierre del NgOnInit

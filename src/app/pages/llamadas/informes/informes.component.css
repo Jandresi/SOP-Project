@@ -30,7 +30,6 @@
     border: 3px solid black;
     width: 20%;
     height: 110px;
-    padding: 10px;
     font-size: 17pt;
 }
 
@@ -57,5 +56,5 @@
 }
 
 canvas {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
